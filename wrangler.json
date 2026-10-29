@@ -1,0 +1,38 @@
+{
+  "name": "note-line-poster",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-01",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "note-line-poster",
+      "database_id": "04702387-b7f7-49ba-b11c-021031a3fc1c",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "acd42f42bcbc478f889b5513de39dd63"
+    }
+  ],
+  "workflows": [
+    {
+      "binding": "GENERATE",
+      "name": "generate-article",
+      "class_name": "GenerateArticleWorkflow"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "0 0 * * *",
+      "*/15 * * * *"
+    ]
+  }
+}
